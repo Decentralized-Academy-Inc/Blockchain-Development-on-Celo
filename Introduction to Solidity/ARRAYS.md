@@ -1,0 +1,3 @@
+uint[5] fixedNumbers = [1, 2, 3, 4, 5];
+
+uint[] dynamicNumbers;

@@ -1,0 +1,41 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+contract VariableTypesExample {
+
+    // State Variables
+    uint256 public myUint = 1;
+    int256 public myInt = -1;
+    bool public isFinished = false;
+    address public contractOwner = msg.sender;
+    string public myString = "Hello, Solidity!";
+    bytes public myBytes = "Data";
+    
+    // Array and Struct
+    uint[] public numbers;
+    
+    struct Student {
+        string name;
+        uint256 grade;
+    }
+    Student public student;
+    
+    // Mapping
+    mapping(address => uint256) public balances;
+    
+    // Constructor
+    constructor() {
+        // Initializing struct
+        student = Student("Alice", 90);
+    }
+    
+    // Function to add to numbers array
+    function addNumber(uint _number) public {
+        numbers.push(_number);
+    }
+    
+    // Function to update mapping
+    function updateBalance(uint256 _balance) public {
+        balances[msg.sender] = _balance;
+    }
+}
